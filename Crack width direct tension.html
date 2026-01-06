@@ -240,17 +240,18 @@
   </script>
 	
 	<script>
-    // Blink effect every 30 seconds
-    setInterval(() => {
-      document.body.style.opacity = '0.3';
-      setTimeout(() => {
-        document.body.style.opacity = '1';
-      }, 200);
-    }, 120000);
+setInterval(() => {
+  const iframe = document.querySelector('iframe');
+  if (iframe) {
+    iframe.contentWindow.postMessage({ type: 'keep-alive' }, '*');
+    console.log('Pinged embedded spreadsheet');
+  }
+}, 30000);
   </script>
 
 </body>
 </html>
+
 
 
 
