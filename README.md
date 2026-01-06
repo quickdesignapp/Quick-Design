@@ -1,1 +1,1 @@
-# Quick-Design
+# quickdesign
