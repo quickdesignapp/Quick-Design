@@ -238,9 +238,17 @@
       }, 5000);
     });
   </script>
-
+	
+  <script>
+setInterval(() => {
+  const iframe = document.getElementById("excelFrame");
+  iframe.src = iframe.src;
+}, 1 * 60 * 1000); // every 10 minutes
+  </script>
+	
 </body>
 </html>
+
 
 
 
