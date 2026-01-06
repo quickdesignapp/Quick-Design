@@ -211,10 +211,12 @@
   <script>
 	  
 setInterval(() => {
-  fetch(window.location.href)
-    .then(response => console.log('Pinged successfully', response.status))
-    .catch(err => console.error('Ping failed', err));
-}, 120000);
+  const iframe = document.querySelector('iframe');
+  if (iframe) {
+    iframe.contentWindow.postMessage({ type: 'keep-alive' }, '*');
+    console.log('Pinged embedded spreadsheet');
+  }
+}, 120000); 
 	  
     let currentZoom = 1;
 
@@ -247,5 +249,6 @@ setInterval(() => {
   </script>
 </body>
 </html>
+
 
 
